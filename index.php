@@ -1,6 +1,6 @@
 <?php
-require "../vendor/autoload.php";
-require "../app/routes/routes.php";
+require_once __DIR__."/vendor/autoload.php";
+require_once __DIR__."/app/routes/routes.php";
 
   try {
     $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
