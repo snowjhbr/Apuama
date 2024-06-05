@@ -1,0 +1,30 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: azure;
+}
+
+
+.header{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    color: black;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.container_logo{
+    display: flex;
+    align-items: center;
+
+}
+
+img {
+    width: 50px;
+    border-radius: 20px;
+}

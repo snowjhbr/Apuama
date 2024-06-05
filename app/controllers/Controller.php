@@ -6,7 +6,7 @@
   class Controller{
 
     public static function view(string $view, array $data = []){
-      $viewPath = dirname(__FILE__,2).'/views';
+      $viewPath = dirname(__FILE__,2).'/resources/views';
 
       if (!file_exists($viewPath . DIRECTORY_SEPARATOR . $view.'.php')) {
         throw new \Exception("A view: {$view} não existe");
