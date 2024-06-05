@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'isaac/revive_projetolocadora',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '4d7df2e797aa5dea25beba97efd98e6f40881bda',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'isaac/revive_projetolocadora' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '4d7df2e797aa5dea25beba97efd98e6f40881bda',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

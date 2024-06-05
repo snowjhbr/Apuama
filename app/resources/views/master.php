@@ -14,7 +14,7 @@
 
     <header class="bg-primary text-white p-3 d-flex justify-content-between align-items-center shadow-sm">
         <div class="d-flex align-items-center">
-            <img src="/Apuama/app/resources/imagens/logoempresa1.png" alt="Logo Apuama" class="logo">
+            <img src="imagens/logoempresa1.png" alt="Logo Apuama" class="logo">
             <span class="ms-2 h4">Apuama</span>
         </div>
         <nav class="d-flex">
@@ -34,7 +34,7 @@
     </header>
 
     <section class="hero-section">
-        <img src="/PI---POO/Front-end/imagens/supperbanner estyleeee.jpg" alt="Veículos de Locação" class="img-fluid">
+        <img src="imagens/Banner.jpg" alt="Veículos de Locação" class="img-fluid">
         <div class="hero-text">
             <h2>Bem-vindo à Apuama</h2>
             <h3>Seus Veículos de Locação de Confiança</h3>
