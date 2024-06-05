@@ -43,7 +43,7 @@
             <a href="#" class="btn btn-info">Saiba Mais</a>
         </div>
     </section>
-    </section>
+    
 
     <footer class="bg-light text-center p-4">
         <div class="container">
