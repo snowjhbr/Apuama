@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
 
     <header class="bg-primary text-white p-3 d-flex justify-content-between align-items-center shadow-sm">
         <div class="d-flex align-items-center">
-            <img src="imagens/logoempresa1.png" alt="Logo Apuama" class="logo">
+            <img src="../imagens/logoempresa1.png" alt="Logo Apuama" class="logo">
             <span class="ms-2 h4">Apuama</span>
         </div>
         <nav class="d-flex">
@@ -43,7 +43,6 @@
             <a href="#" class="btn btn-info">Saiba Mais</a>
         </div>
     </section>
-    
 
     <footer class="bg-light text-center p-4">
         <div class="container">
