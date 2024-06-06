@@ -2,8 +2,15 @@
 require_once __DIR__."/vendor/autoload.php";
 require_once __DIR__."/app/routes/routes.php";
 
-// Inicia a sessão.
-session_start();
+// Verificação de ambiente
+if (php_sapi_name() !== 'cli-server' && !isset($_SERVER['REQUEST_URI'])) {
+    die("Erro: Este script deve ser executado em um servidor web.");
+}
+
+// Inicia a sessão se ainda não estiver iniciada
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $request = $_SERVER['REQUEST_METHOD'];
