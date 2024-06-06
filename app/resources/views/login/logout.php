@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Logout</title>
-</head>
-<body>
-    <h1>Você saiu do sistema</h1>
-    <a href="../controllers/LoginController.php?action=login">Login</a>
-</body>
-</html>
+<?php
+// Inicia a sessão.
+session_start();
+
+#Função JavaScript para alerta:
+function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
+
+// Verificando se a variável user existe na sessão.
+if (isset($_SESSION['cpf'])) {
+	// Caso exista ela é removida da sessão.
+	unset($_SESSION['cpf']);
+}
+phpAlert("Você foi deslogado(a) do sistema.");
+header("location:../index.php");
+?>
