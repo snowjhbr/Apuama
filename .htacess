@@ -1,0 +1,12 @@
+# Habilita o mod_rewrite
+RewriteEngine On
+
+# Redireciona todas as requisições para index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Permite acesso aos arquivos estáticos (CSS, JS, Imagens)
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico)$">
+    Allow from all
+</FilesMatch>
