@@ -1,47 +1,56 @@
 <?php
-include_once "../bd.php";
-include_once "../models/CarroModel.php";
+require_once '../config/conexao.php';
+require_once '../models/Carro.php';
 
 class CarroController {
-    private $model;
+    private $db;
+    private $carro;
 
     public function __construct($db) {
-        $this->model = new CarroModel($db);
+        $this->carro = new Carro($db);
     }
 
-    public function editarCarro() {
-        $carroData = [
-            'placaAutomovel' => $_POST['placaAutomovel'],
-            'corAutomovel' => $_POST['corAutomovel'],
-            'chassisAutomovel' => $_POST['chassisAutomovel'],
-            'direcaoAutomovel' => isset($_POST['direcaoAutomovel']) ? 1 : 0,
-            'arCondicionadoAutomovel' => isset($_POST['ar_condicionadoAutomovel']) ? 1 : 0,
-            'manutencaoAutomovel' => isset($_POST['manutencaoAutomovel']) ? 1 : 0,
-            'nroDePortaAutomovel' => $_POST['nro_de_portaAutomovel'],
-            'quilometragemAutomovel' => $_POST['quilometragemAutomovel'],
-            'transmissaoAutomovel' => $_POST['transmissaoAutomovel'],
-            'marcaAutomovel' => $_POST['marcaAutomovel'],
-            'tipoDeCombustivelAutomovel' => $_POST['tipo_de_combustivelAutomovel'],
-            'renavamAutomovel' => $_POST['renavamAutomovel'],
-            'statusAutomovel' => isset($_POST['statusAutomovel']) ? 1 : 0,
-            'tipoAutomovel' => $_POST['tipoAutomovel'],
-            'valorAutomovel' => $_POST['valorAutomovel']
-        ];
+    public function index() {
+        $stmt = $this->carro->readAll();
+        $carros = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        include_once '../views/carro/todos_carros.php';
+    }
 
-        if ($this->model->atualizarCarro($carroData)) {
-            $this->redirect("../views/indexFuncionario.php");
+    public function create() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->carro->placa = $_POST['placa'];
+            $this->carro->cor = $_POST['cor'];
+            $this->carro->chassis = $_POST['chassis'];
+            $this->carro->modelo = $_POST['modelo'];
+            $this->carro->direcao_assistida = isset($_POST['direcao_assistida']);
+            $this->carro->ar_condicionado = isset($_POST['ar_condicionado']);
+            $this->carro->manutencao = isset($_POST['manutencao']);
+            $this->carro->nro_de_porta = $_POST['nro_de_porta'];
+            $this->carro->quilometragem = $_POST['quilometragem'];
+            $this->carro->transmissao = $_POST['transmissao'];
+            $this->carro->marca = $_POST['marca'];
+            $this->carro->tipo_de_combustivel = $_POST['tipo_de_combustivel'];
+            $this->carro->renavam = $_POST['renavam'];
+            $this->carro->tipo = $_POST['tipo'];
+            $this->carro->status = $_POST['status'];
+            $this->carro->valor = $_POST['valor'];
+
+            if ($this->carro->create()) {
+                echo "Carro adicionado com sucesso!";
+            } else {
+                echo "Erro ao adicionar carro.";
+            }
         } else {
-            $this->redirect("salvaEditaCarro.php?error=salvaEditaCarro");
+            include_once '../views/carro/inserir_carros.php';
         }
-    }
-
-    private function redirect($url) {
-        header("location:$url");
-        exit();
     }
 }
 
-$db = new PDO('mysql:host=localhost;dbname=nomeDoBanco', 'usuario', 'senha'); // Ajuste a conexão com o banco
+// Inicialize o controlador e chame o método apropriado
 $controller = new CarroController($db);
-$controller->editarCarro();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $controller->create();
+} else {
+    $controller->index();
+}
 ?>
