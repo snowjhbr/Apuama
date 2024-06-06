@@ -21,9 +21,18 @@ try {
         throw new Exception("A rota não existe");
     }
 
+    // Verifica se o controlador está definido e inclui o arquivo de controladores
+    $controllerFunction = $router[$request][$uri];
+    if (!function_exists($controllerFunction)) {
+        require_once __DIR__."/app/controllers/{$controllerFunction}.php";
+    }
+
     // Executa o controlador associado à rota
-    $controller = $router[$request][$uri];
-    $controller();
+    if (function_exists($controllerFunction)) {
+        $controllerFunction();
+    } else {
+        throw new Exception("O controlador não existe");
+    }
 
 } catch (Exception $e) {
     echo "Erro: " . $e->getMessage();
