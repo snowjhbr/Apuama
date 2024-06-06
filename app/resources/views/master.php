@@ -34,7 +34,7 @@
     </header>
 
     <section class="hero-section">
-        <img src="imagens/Banner.jpg" alt="Veículos de Locação" class="img-fluid">
+        <img src="../imagens/Banner.jpg" alt="Veículos de Locação" class="img-fluid">
         <div class="hero-text">
             <h2>Bem-vindo à Apuama</h2>
             <h3>Seus Veículos de Locação de Confiança</h3>
