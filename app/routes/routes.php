@@ -1,12 +1,16 @@
 <?php
     $router = [
-    'GET'=> [
-      '/' => fn() => load('HomeController','index'),
-      '/contact' => fn() => load('ContactController','index')
-    ],
-    'POST'=> [
-      '/contact' => fn() => load('ContactController','store')
-    ]  
+      'GET' => [
+          '/' => 'homeController',
+          '/login' => 'loginController',
+          '/logout' => 'logoutController',
+          '/cliente' => 'clienteController',
+          '/funcionario' => 'funcionarioController'
+      ],
+      'POST' => [
+          '/login' => 'processLogin',
+          '/alugar' => 'processAluguel'
+      ]
   ];
 
   function load(string $controller, string $action){
