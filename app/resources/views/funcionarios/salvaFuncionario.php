@@ -2,7 +2,7 @@
 # Inicia a sessão.
 #session_start();
 
-include_once "../bd.php";
+include_once "/app/config/conexao.php";
 
 #Recebe parâmetros para inserção no banco:
 $flag = 0;

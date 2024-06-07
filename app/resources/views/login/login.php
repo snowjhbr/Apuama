@@ -6,9 +6,9 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-	<link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../icon.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/app/resources/css/icon.css" rel="stylesheet" type="text/css" media="all" />
 
 	<!--- Esta funcao formata mascara dos inputs-->
     <script type="text/javascript">
@@ -32,7 +32,7 @@
 					<div id="wrapper1">
 						<div id="espaço_container" class="container">
 							<div id="logo_site">
-								<img src="../images/carros_logo.png" alt="some text" width=940 height=200>
+								<img src="/app/resources/images/carros_logo.png" alt="some text" width=940 height=200>
 							</div>
 						</div>
 					</div>
@@ -41,10 +41,10 @@
 						<ul>
 							<li><a href="../index.php" accesskey="1" title="">Principal</a></li>
 							<li class="current_page_item"><a href="current_page_item" accesskey="2" title="">Login</a></li>
-							<li><a href="../categorias/economicos.php" accesskey="3" title="">Econômicos</a></li>
-							<li><a href="../categorias/utilitarios.php" accesskey="4" title="">Utilitários</a></li>
-							<li><a href="../categorias/suv.php" accesskey="5" title="">SUV</a></li>
-							<li><a href="../categorias/luxo.php" accesskey="6" title="">Luxo</a></li>
+							<li><a href="/app/resources/views/categorias/economicos.php" accesskey="3" title="">Econômicos</a></li>
+							<li><a href="/app/resources/views/categorias/utilitarios.php" accesskey="4" title="">Utilitários</a></li>
+							<li><a href="/app/resources/views/categorias/suv.php" accesskey="5" title="">SUV</a></li>
+							<li><a href="/app/resources/views/categorias/luxo.php" accesskey="6" title="">Luxo</a></li>
 							<li><a href="../contato.php" accesskey="7" title="">Contato</a></li>
 						</ul>
 					</div>
@@ -66,9 +66,9 @@
 					</button>
 				</form>
 
-				<form method="post" action="../criarconta.php">
+				<form method="post" action="/app/resources/views/funcionarios/criarconta.php">
 
-					<button  id="botaoCriarConta" class="button" formaction="../cliente/cria_conta.php">
+					<button  id="botaoCriarConta" class="button" formaction="/app/resources/views/clientes/cria_conta.php">
 						Criar conta
 					</button>
 				</form>
