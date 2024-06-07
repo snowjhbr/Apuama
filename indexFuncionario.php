@@ -108,7 +108,7 @@ else{
 					<div class="column3">
 						<div class="box">
 							<span class="icon icon-key"></span>
-							<form method="post" action="app/resources/views/funcionario/editar_funcionario.php">
+							<form method="post" action="app/resources/views/funcionarios/editar_funcionario.php">
 								<h3>Alterar meus dados</h3>
 								<p>Altere seus dados cadastrados. Como: Nome, CPF, etc.</p>
 								<button type="submit" id="botaofun2" class="button">
