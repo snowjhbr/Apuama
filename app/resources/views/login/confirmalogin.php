@@ -13,7 +13,7 @@ $usuario = $_POST['cpf'];
 $senha = $_POST['senha'];
 
 /* Conectando com o banco de dados para cadastrar registros */
-include_once "../bd.php";
+include_once "Apuama/app/config/conexao.php";
 	
 $query = "SELECT * FROM usuario WHERE cpf=? AND senha=?";
 $stm = $db->prepare($query);
@@ -40,13 +40,13 @@ if ($row = $stm -> fetch()) {
 	
 	// Redirecionando para a pagina inicial.
 	if($_SESSION['tipo'] == 'C'){
-		header("location:../indexCliente.php");
+		header("location:Apuama/indexCliente.php");
 	}
 	if($_SESSION['tipo'] == 'F'){
-		header ("location:../indexFuncionario.php");
+		header ("location:Apuama/indexFuncionario.php");
 	}
 	
 } else {
 	phpAlert("Usuário ou senha incorretos. Tente novamente.");
-	header("location:login.php");
+	header("location:Apuama/app/resources/views/login/login.php");
 }
