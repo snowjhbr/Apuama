@@ -1,5 +1,5 @@
 <?php
-include_once "Apuama/app/config/conexao.php";
+include_once "/app/config/conexao.php";
 $placaAutomovel = $_POST['placaAutomovel'];
 
 
@@ -9,9 +9,9 @@ print "<p>$query</p>";
 $stm = $db->prepare($query);
 
 if ($stm->execute()) {
-    header("location:Apuama/app/resources/views/carro/todos_mecanica.php");
+    header("location:/app/resources/views/carro/todos_mecanica.php");
 } else {
     print "<p>Faiô</p>";
-    header("location:Apuama/app/resources/views/carro/todos_mecanica.php?error=Apuama/app/resources/views/carro/todos_mecanica.php");
+    header("location:/app/resources/views/carro/todos_mecanica.php?error=/app/resources/views/carro/todos_mecanica.php");
 }
 ?>

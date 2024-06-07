@@ -7,8 +7,8 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="Apuama/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="Apuama/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 
@@ -20,7 +20,7 @@
                     <div id="wrapper1">
                         <div id="espaço_container" class="container">
                             <div id="logo_site">
-                                <img src="Apuama/app/resources/images/carros_logo.png" alt="some text" width=940 height=200>
+                                <img src="/app/resources/images/carros_logo.png" alt="some text" width=940 height=200>
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                     <div id="menu">
                         <div id="divtitulocadastra">Pesquisar Automovel</div>
                         <div id="wrapperlogin">
-                            <form enctype="multipart/form-data" method="POST" action="Apuama/app/resources/views/carro/editar_carros.php">
+                            <form enctype="multipart/form-data" method="POST" action="/app/resources/views/carro/editar_carros.php">
 
                                 <label id="textocadastra">Placa:</label>
                                 <input type="text" id="campo" name="placaAutomovel" />
@@ -37,7 +37,7 @@
                                     <button type="submit" id="botaoCadastro" class="button">
                                         Pesquisar
                                     </button>
-                                    <button id="botaoCancelar" class="button" formaction="Apuama/indexFuncionario.php">
+                                    <button id="botaoCancelar" class="button" formaction="/indexFuncionario.php">
                                         Cancelar
                                     </button>
                                 </div>

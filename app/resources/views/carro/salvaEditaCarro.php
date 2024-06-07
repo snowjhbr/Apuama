@@ -2,7 +2,7 @@
 # Inicia a sessão.
 #session_start();
 
-include_once "Apuama/app/config/conexao.php";
+include_once __DIR__ . "/../../../config/conexao.php";
 
 #Recebe parâmetros para inserção no banco:
 $placaAutomovel = $_POST['placaAutomovel'];
@@ -54,8 +54,8 @@ $query = "UPDATE automovel SET cor = '$corAutomovel', chassis = '$chassisAutomov
 $stm = $db->prepare($query);
 
 if ($stm->execute()) {
-    header("location:Apuama/indexFuncionario.php");
+    header("location:/indexFuncionario.php");
 } else {
     print "<p>Faiô</p>";
-    header("location:Apuama/app/resources/views/carro/salvaEditaCarro.php?error=Apuama/app/resources/views/carro/salvaEdiaCarro.php");
+    header("location:/app/resources/views/carro/salvaEditaCarro.php?error=/app/resources/views/carro/salvaEdiaCarro.php");
 }

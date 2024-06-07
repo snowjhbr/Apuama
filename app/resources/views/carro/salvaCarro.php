@@ -2,7 +2,7 @@
 # Inicia a sessão.
 #session_start();
 
-include_once "Apuama/app/config/conexao.php";
+include_once __DIR__ . "/../../../config/conexao.php";
 
 #Recebe parâmetros para inserção no banco:
 $flag = 0;
@@ -47,7 +47,7 @@ $stm = $db->prepare($query);
 
 
 if ($stm->execute()) {
-    header("location:Apuama/indexFuncionario.php");
+    header("location:/indexFuncionario.php");
 } else {
-    header("location:Apuama/app/resources/views/carro/salvaCarro.php?error=Apuama/app/resources/views/carro/salvaCarro.php");
+    header("location:/app/resources/views/carro/salvaCarro.php?error=/app/resources/views/carro/salvaCarro.php");
 }

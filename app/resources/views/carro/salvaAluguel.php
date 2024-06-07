@@ -1,6 +1,6 @@
 <?php
 
-include_once "Apuama/app/config/conexao.php";
+include_once __DIR__ . "/../../../config/conexao.php";
 
 # Inicia a sessão.
 session_start();
@@ -32,7 +32,7 @@ if($stm->execute()){
 
     #Se query tem o valor de um cod_locacao, não posso alocar nessas datas:
     if($codLocacao != ''){
-        header("location:Apuama/app/resources/views/carro/tentarNovamente.php");
+        header("location:/app/resources/views/tentarNovamente.php");
         phpAlert("Carro já está alugado no período. Troque as datas ou troque o carro.");
     }
 
@@ -48,7 +48,7 @@ if($stm->execute()){
 
             #Se query tem o valor de um cod_locacao, não posso alocar nessas datas:
             if($codLocacao != ''){
-                header("location:Apuama/app/resources/views/carro/tentarNovamente.php");
+                header("location:/app/resources/views/tentarNovamente.php");
                 phpAlert("Carro já está alugado no período. Troque as datas ou troque o carro.");
             }
 
@@ -89,14 +89,14 @@ if($stm->execute()){
                     $stm = $db->prepare($query);
                     if($stm->execute()){
                         phpAlert("Reserva efetuada.");                        
-                        header("location:Apuama/indexCliente.php");
+                        header("location:/indexCliente.php");
                         }                        
                     else{
-                        header("location:Apuama/app/resources/views/carro/salvaAluguel.php?error=Apuama/app/resources/views/carro/salvaAluguel.php");
+                        header("location:/app/resources/views/carro/salvaAluguel.php?error=/app/resources/views/salvaAluguel.php");
                     }
                 }
                 else{
-                    header("location:Apuama/app/resources/views/carro/salvaAluguel.php?error=Apuama/app/resources/views/carro/salvaAluguel.php");
+                    header("location:/app/resources/views/carro/salvaAluguel.php?error=/app/resources/views/carro/salvaAluguel.php");
                 }
             }
         }
