@@ -82,15 +82,15 @@ try {
 
                         // Link de login/logout dinâmico
                         if (isset($_SESSION['cpf'])) {
-                            echo "<li><a href='login/logout.php' accesskey='2' title=''>Logout</a></li>";
+                            echo "<li><a href='/app/resources/views/login/logout.php' accesskey='2' title=''>Logout</a></li>";
                         } else {
-                            echo "<li><a href='login/login.php' accesskey='2' title=''>Login</a></li>";
+                            echo "<li><a href='/app/resources/views/login/login.php' accesskey='2' title=''>Login</a></li>";
                         }
                         ?>
-                        <li><a href="categorias/economicos.php" accesskey="3" title="">Econômicos</a></li>
-                        <li><a href="categorias/utilitarios.php" accesskey="4" title="">Utilitários</a></li>
-                        <li><a href="categorias/suv.php" accesskey="5" title="">SUV</a></li>
-                        <li><a href="categorias/luxo.php" accesskey="6" title="">Luxo</a></li>
+                        <li><a href="/app/resources/views/categorias/economicos.php" accesskey="3" title="">Econômicos</a></li>
+                        <li><a href="/app/resources/views/categorias/utilitarios.php" accesskey="4" title="">Utilitários</a></li>
+                        <li><a href="/app/resources/views/categorias/suv.php" accesskey="5" title="">SUV</a></li>
+                        <li><a href="/app/resources/views/categorias/luxo.php" accesskey="6" title="">Luxo</a></li>
                         <li><a href="contato.php" accesskey="7" title="">Contato</a></li>
                     </ul>
                 </div>
