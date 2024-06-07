@@ -2,7 +2,7 @@
 # Inicia a sessão.
 #session_start();
 
-include_once "../bd.php";
+include_once __DIR__ . "/../../../config/conexao.php";
 
 #Recebe parâmetros para inserção no banco:
 $codCliente = $_POST['codUsuario'];
@@ -32,11 +32,11 @@ if ($stm->execute()) {
     $query = "UPDATE usuario SET data_nascimento = '$dataCliente', nome = '$nomeCliente', rua = '$ruaCliente', bairro = '$bairroCliente', cidade = '$cidadeCliente', cep = '$cepCliente', status = '$statusCliente', senha = '$senhaCliente' WHERE cod_usuario = '$codCliente'";
     $stm = $db->prepare($query);
     if($stm->execute()){
-        header("location:../index.php");
+        header("location:/index.php");
     }
     else{
-        header("location:salvaEditaCliente.php?error=salvaEditaCliente");
+        header("location:app/resources/views/clientes/salvaEditaCliente.php?error=salvaEditaCliente");
     }
 } else {
-    header("location:salvaEditaCliente.php?error=salvaEditaCliente");
+    header("location:app/resources/views/clientes/salvaEditaCliente.php?error=salvaEditaCliente");
 }

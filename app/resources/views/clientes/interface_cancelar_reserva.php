@@ -18,10 +18,10 @@ if (isset($_SESSION['cpf'])) {
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../icon.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../icon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/app/resources/css/icon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/app/resources/css/icon.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 
@@ -33,19 +33,19 @@ if (isset($_SESSION['cpf'])) {
                     <div id="wrapper1">
                         <div id="espaço_container" class="container">
                             <div id="logo_site">
-                                <img src="../images/carros_logo.png" alt="some text" width=940 height=200>
+                                <img src="/app/resources/images/carros_logo.png" alt="some text" width=940 height=200>
                             </div>
                         </div>
                     </div>
                     <h1><a href="#">Sistema de Gerenciamento de Aluguel de Carros</a></h1>
                     <br>
-                    <form enctype="multipart/form-data" method="POST" action="../indexCliente.php">
+                    <form enctype="multipart/form-data" method="POST" action="/indexCliente.php">
                         <button type="submit" id="botaovoltar" class="button">
                             Voltar para o menu principal
                         </button>
                     </form>
                     <?php
-                include_once "../bd.php";
+                include_once __DIR__ . "/../../../config/conexao.php";
 
                 #SQL para listagem
                 $query = "SELECT c.cod_cliente FROM cliente c, usuario u WHERE u.cpf = '$cpf'";
@@ -84,7 +84,7 @@ if (isset($_SESSION['cpf'])) {
                                                                 <div class='column10'>
                                                                     <div class='boxcar'>
                                                                         <span class='icon icon-shopping-cart'></span>
-                                                                        <form enctype='multipart/form-data' method='POST' action='cancelar_reserva.php' >							
+                                                                        <form enctype='multipart/form-data' method='POST' action='app/resources/views/clientes/cancelar_reserva.php' >							
                                                                         <h33><strong>Carro: </strong>$modelocarro</h33>							
                                                                         <h33><strong>Tipo do carro: </strong>$tipocarro</h33>
                                                                         <h33><strong>Data locação: </strong>$datalocacao</h33>

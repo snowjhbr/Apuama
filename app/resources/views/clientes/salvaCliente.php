@@ -2,7 +2,7 @@
 # Inicia a sessão.
 #session_start();
 
-include_once "../bd.php";
+include_once __DIR__ . "/../../../config/conexao.php";
 
 #Recebe parâmetros para inserção no banco:
 $flag = 0;
@@ -37,17 +37,17 @@ if ($stm->execute()) {
         $query = "INSERT INTO cliente(carteira_de_motorista, cod_cliente) VALUES ('$carteiraMotoraCliente', '$codUsuario')";
         $stm = $db->prepare($query);
         if ($stm->execute()) {
-            header("location:../index.php");
+            header("location:/index.php");
         }
         else {
-            header("location:../cliente/salvaCliente.php?error=salvaCliente");
+            header("location:app/resources/views/clientes/salvaCliente.php?error=salvaCliente");
         }
     }
     else {
-        header("location:../cliente/salvaCliente.php?error=salvaCliente");
+        header("location:app/resources/views/clientes/salvaCliente.php?error=salvaCliente");
     }
 
 
 } else {
-    header("location:../cliente/salvaCliente.php?error=salvaCliente");
+    header("location:app/resources/views/clientes/salvaCliente.php?error=salvaCliente");
 }
