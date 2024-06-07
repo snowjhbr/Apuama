@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '/app/config/conexao.php';
+include_once __DIR__ . "/../../../config/conexao.php";
 require_once '/app/models/Usuario.php';
 
 class LoginController {
@@ -24,14 +24,14 @@ class LoginController {
                 echo "Login falhou. CPF ou senha incorretos.";
             }
         } else {
-            include_once '../views/login/login.php';
+            include_once 'app/resources/views/login/login.php';
         }
     }
 
     public function logout() {
         session_unset();
         session_destroy();
-        header("Location: ../views/login/logout.php");
+        header("Location: app/resources/views/login/logout.php");
     }
 }
 

@@ -1,6 +1,6 @@
 <?php
-require_once '../config/conexao.php';
-require_once '../models/Funcionario.php';
+include_once __DIR__ . "/../../../config/conexao.php";
+require_once 'app/models/Funcionario.php';
 
 class FuncionarioController {
     private $db;
@@ -13,7 +13,7 @@ class FuncionarioController {
     public function index() {
         $stmt = $this->funcionario->readAll();
         $funcionarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        include_once '../views/funcionarios/listar.php';
+        include_once 'app/resources/views/funcionarios/listar.php';
     }
 
     public function create() {
@@ -28,7 +28,7 @@ class FuncionarioController {
                 echo "Erro ao adicionar funcionário.";
             }
         } else {
-            include_once '../views/funcionarios/criar.php';
+            include_once 'app/resources/views/funcionarios/criar.php';
         }
     }
 
@@ -48,7 +48,7 @@ class FuncionarioController {
             $id = $_GET['id'];
             $stmt = $this->funcionario->readById($id);
             $funcionario = $stmt->fetch(PDO::FETCH_ASSOC);
-            include_once '../views/funcionarios/editar.php';
+            include_once 'app/resources/views/funcionarios/editar.php';
         }
     }
 }
