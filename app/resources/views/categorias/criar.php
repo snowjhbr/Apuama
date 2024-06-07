@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Criar Nova Categoria</h1>
-    <form action="../controllers/CategoriaController.php" method="POST">
+    <form action="/app/controllers/CategoriaController.php" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required><br>
         <input type="submit" value="Salvar">
