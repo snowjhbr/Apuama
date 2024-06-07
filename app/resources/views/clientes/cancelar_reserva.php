@@ -10,7 +10,7 @@ if (isset($_SESSION['cpf'])) {
     $tipo = '';
 }
 
-include_once "../bd.php";
+include_once __DIR__ . "/../../../config/conexao.php";
 
 #Recebe parâmetros para inserção no banco:
 $flag = 0;
@@ -27,8 +27,8 @@ $stm->execute();
 $query2 = "DELETE FROM reserva WHERE cod_reserva = '$codreserva'";
 $stm2 = $db->prepare($query2);
 if ($stm2->execute()) {
-    header("location:../indexCliente.php");
+    header("location:/indexCliente.php");
 }
 else {
-    header("location:../cliente/cancelar_reserva.php?error=cancelar_reserva");
+    header("location:app/resources/views/clientes/cancelar_reserva.php?error=cancelar_reserva");
 }

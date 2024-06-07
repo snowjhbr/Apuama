@@ -12,7 +12,8 @@ else{
 }
 ?>
 <?php
-include_once "../bd.php";
+include_once __DIR__ . "/../../../config/conexao.php";
+
 $cpfCliente = $_POST['cpfCliente'];
 $query = "SELECT * FROM usuario where cpf = '$cpfCliente'";
 $stm = $db->prepare($query);
@@ -48,8 +49,8 @@ if ($stm->execute()){
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
     <!--- Esta funcao formata mascara dos inputs-->
     <script type="text/javascript">
@@ -73,7 +74,7 @@ if ($stm->execute()){
                     <div id="wrapper1">
                         <div id="espaço_container" class="container">
                             <div id="logo_site">
-                                <img src="../images/carros_logo.png" alt="some text" width=940 height=200>
+                                <img src="/app/resources/images/carros_logo.png" alt="some text" width=940 height=200>
                             </div>
                         </div>
                     </div>
@@ -81,7 +82,7 @@ if ($stm->execute()){
                     <div id="menu">
                         <div id="divtitulocadastra">Altera dados Cliente</div>
                         <div id="wrapperlogin">
-                            <form enctype="multipart/form-data" method="POST" action="salvaEditaCliente.php">
+                            <form enctype="multipart/form-data" method="POST" action="/app/resources/views/clientes/salvaEditaCliente.php">
                                
                                 <label id="textocadastra">Código de Usuário:</label>
                                 <input readonly="true" type="text" id="campo" name="codUsuario" value="<?php print $codUsuario; ?>" />
@@ -140,12 +141,12 @@ if ($stm->execute()){
                                     </button>
                                     
                                     <?php if ($tipo=='C') {
-                                            echo "<button id='botaoCancelar' class='button' formaction='../indexCliente.php'>
+                                            echo "<button id='botaoCancelar' class='button' formaction='/indexCliente.php'>
                                             Cancelar cadastro
                                         </button>";
                                     }
                                         else{
-                                            echo "<button id='botaoCancelar' class='button' formaction='../indexFuncionario.php'>
+                                            echo "<button id='botaoCancelar' class='button' formaction='/indexFuncionario.php'>
                                             Cancelar cadastro
                                         </button>";
                                         
