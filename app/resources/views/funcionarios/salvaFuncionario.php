@@ -2,7 +2,7 @@
 # Inicia a sessão.
 #session_start();
 
-include_once "/app/config/conexao.php";
+include_once "Apuama/app/config/conexao.php";
 
 #Recebe parâmetros para inserção no banco:
 $flag = 0;
@@ -38,17 +38,17 @@ if ($stm->execute()) {
         $query = "INSERT INTO funcionario(funcao, cod_func) VALUES ('$funcaoFuncionario', '$codUsuario')";
         $stm = $db->prepare($query);
         if ($stm->execute()) {
-            header("location:../index.php");
+            header("location:Apuama/index.php");
         }
         else {
-            header("location:../funcionario/salvaFuncionario.php?error=salvaFuncionario");
+            header("location:Apuama/app/resources/views/funcionarios/salvaFuncionario.php?error=Apuama/app/resources/views/funcionarios/salvaFuncionario.php");
         }
     }
     else {
-        header("location:../funcionario/salvaFuncionario.php?error=salvaFuncionario");
+        header("location:Apuama/app/resources/views/funcionarios/salvaFuncionario.php?error=Apuama/app/resources/views/funcionarios/salvaFuncionario.php");
     }
 
 
 } else {
-    #header("location:../funcionario/salvaFuncionario.php?error=salvaFuncionario");
+    header("Apuama/app/resources/views/funcionarios/salvaFuncionario.php?error=Apuama/app/resources/views/funcionarios/salvaFuncionario.php");
 }
