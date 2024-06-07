@@ -1,6 +1,6 @@
 <?php
 
-include_once "../bd.php";
+include_once "Apuama/app/config/conexao.php";
 
 # Inicia a sessão.
 session_start();

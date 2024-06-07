@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-include_once "/Apuama/app/config/conexao.php";
+include_once "Apuama/app/config/conexao.php";
 $placaAutomovel = $_POST['placaAutomovel'];
 $query = "SELECT * FROM automovel where placa = '$placaAutomovel'";
 $stm = $db->prepare($query);
@@ -32,8 +32,8 @@ if ($stm->execute()) {
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="Apuama/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="Apuama/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 
@@ -46,7 +46,7 @@ if ($stm->execute()) {
                     <div id="wrapper1">
                         <div id="espaço_container" class="container">
                             <div id="logo_site">
-                                <img src="/app/resources/images/carros_logo.png" alt="some text" width=940 height=200>
+                                <img src="Apuama/app/resources/images/carros_logo.png" alt="some text" width=940 height=200>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ if ($stm->execute()) {
                     <div id="menu">
                         <div id="divtitulocadastra">Inserir Automovel</div>
                         <div id="wrapperlogin">
-                            <form enctype="multipart/form-data" method="POST" action="salvaEditaCarro.php">
+                            <form enctype="multipart/form-data" method="POST" action="Apuama/app/resources/views/carro/salvaEditaCarro.php">
 
                                 <label id="textocadastra">Placa:</label>
                                 <input readonly="true" type="text" id="campo" name="placaAutomovel" value="<?php print $placaAutomovel; ?>" />
@@ -129,7 +129,7 @@ if ($stm->execute()) {
                                         Confirmar edições no sistema
                                     </button>
 
-                                    <button id="botaoCancelar" class="button" formaction="../indexFuncionario.php">
+                                    <button id="botaoCancelar" class="button" formaction="Apuama/indexFuncionario.php">
                                         Cancelar
                                     </button>
                                 </div>

@@ -87,11 +87,11 @@ try {
                             echo "<li><a href='/app/resources/views/login/login.php' accesskey='2' title=''>Login</a></li>";
                         }
                         ?>
-                        <li><a href="/app/resources/views/categorias/economicos.php" accesskey="3" title="">Econômicos</a></li>
-                        <li><a href="/app/resources/views/categorias/utilitarios.php" accesskey="4" title="">Utilitários</a></li>
-                        <li><a href="/app/resources/views/categorias/suv.php" accesskey="5" title="">SUV</a></li>
-                        <li><a href="/app/resources/views/categorias/luxo.php" accesskey="6" title="">Luxo</a></li>
-                        <li><a href="contato.php" accesskey="7" title="">Contato</a></li>
+                        <li><a href="Apuama/app/resources/views/categorias/economicos.php" accesskey="3" title="">Econômicos</a></li>
+                        <li><a href="Apuama/app/resources/views/categorias/utilitarios.php" accesskey="4" title="">Utilitários</a></li>
+                        <li><a href="Apuama/app/resources/views/categorias/suv.php" accesskey="5" title="">SUV</a></li>
+                        <li><a href="Apuama/app/resources/views/categorias/luxo.php" accesskey="6" title="">Luxo</a></li>
+                        <li><a href="Apuama/app/resources/views/contato.php" accesskey="7" title="">Contato</a></li>
                     </ul>
                 </div>
             </div>
@@ -143,7 +143,7 @@ try {
             <div id="espaço_container" class="container">
                 <div class="title">
                     <h2>Temos todos os tipos de automóveis!</h2>
-                    <img src="/app/resources/images/veiculos.png" alt="Veículos" width="800" height="280">
+                    <img src="Apuama/app/resources/images/veiculos.png" alt="Veículos" width="800" height="280">
                 </div>
             </div>
         </div>
