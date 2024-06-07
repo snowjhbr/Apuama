@@ -1,5 +1,5 @@
 <?php
-include_once "/app/config/conexao.php";
+include_once __DIR__ . "/../../../config/conexao.php";
 $placaAutomovel = $_POST['placaAutomovel'];
 
 
