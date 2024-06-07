@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once '../config/conexao.php';
-require_once '../models/Usuario.php';
+require_once '/app/config/conexao.php';
+require_once '/app/models/Usuario.php';
 
 class LoginController {
     private $db;
