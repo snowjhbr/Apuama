@@ -5,7 +5,7 @@
 session_start();
 
 
-include_once "/app/config/conexao.php";
+include_once "Apuama/app/config/conexao.php";
 $cpfCliente = $_SESSION['cpf'];
 $query = "SELECT * FROM usuario where cpf = '$cpfCliente'";
 $stm = $db->prepare($query);
@@ -38,8 +38,8 @@ if ($stm->execute()){
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="Apuama/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="Apuama/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
     <!--- Esta funcao formata mascara dos inputs-->
     <script type="text/javascript">
@@ -63,7 +63,7 @@ if ($stm->execute()){
                     <div id="wrapper1">
                         <div id="espaço_container" class="container">
                             <div id="logo_site">
-                                <img src="/app/resources/images/carros_logo.png" alt="some text" width=940 height=200>
+                                <img src="Apuama/app/resources/images/carros_logo.png" alt="some text" width=940 height=200>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ if ($stm->execute()){
                     <div id="menu">
                         <div id="divtitulocadastra">Altera dados Funcionário</div>
                         <div id="wrapperlogin">
-                            <form enctype="multipart/form-data" method="POST" action="salvaEditaFuncionario.php">
+                            <form enctype="multipart/form-data" method="POST" action="Apuama/app/resources/views/funcionarios/salvaEditaFuncionario.php">
                                 
                                 
                                 <label id="textocadastra">Código de Usuário:</label>
@@ -128,7 +128,7 @@ if ($stm->execute()){
                                         Confirmar edição
                                     </button>
 
-                                    <button id="botaoCancelar" class="button" formaction="../indexFuncionario.php">
+                                    <button id="botaoCancelar" class="button" formaction="Apuama/indexFuncionario.php">
                                         Cancelar cadastro
                                     </button>
                                 </div>

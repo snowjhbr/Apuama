@@ -2,7 +2,7 @@
 # Inicia a sessão.
 #session_start();
 
-include_once "/app/config/conexao.php";
+include_once "Apuama/app/config/conexao.php";
 
 #Recebe parâmetros para inserção no banco:
 $codUsuario = $_POST['codUsuario'];
@@ -32,11 +32,11 @@ if ($stm->execute()) {
     $query = "UPDATE usuario SET data_nascimento = '$dataFunc', nome = '$nomeFunc', rua = '$ruaFunc', bairro = '$bairroFunc', cidade = '$cidadeFunc', cep = '$cepFunc', status = '$statusFunc', senha = '$senhaFunc' WHERE cod_usuario = '$codUsuario'";
     $stm = $db->prepare($query);
     if($stm->execute()){
-        header("location:../index.php");
+        header("location:Apuama/index.php");
     }
     else{
-        header("location:salvaEditaFuncionario.php?error=salvaEditaFuncionario");
+        header("location:Apuama/app/resources/views/funcionarios/salvaEditaFuncionario.php?error=Apuama/app/resources/views/funcionarios/salvaEditaFuncionario.php");
     }
 } else {
-    header("location:salvaEditaFuncionario.php?error=salvaEditaFuncionario");
+    header("location:Apuama/app/resources/views/funcionarios/salvaEditaFuncionario.php?error=Apuama/app/resources/views/funcionarios/salvaEditaFuncionario.php");
 }
