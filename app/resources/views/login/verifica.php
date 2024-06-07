@@ -6,6 +6,6 @@
 	if(empty($_SESSION["cpf"]))
 	{
 		//Caso não exista dados registrados, exige login
-		header("Location:Apuama/app/resources/views/login/login.php");
+		header("Location:/app/resources/views/login/login.php");
 	}
 ?>

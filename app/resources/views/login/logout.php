@@ -13,5 +13,5 @@ if (isset($_SESSION['cpf'])) {
 	unset($_SESSION['cpf']);
 }
 phpAlert("Você foi deslogado(a) do sistema.");
-header("location:Apuama/index.php");
+header("location:/index.php");
 ?>
