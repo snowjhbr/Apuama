@@ -32,7 +32,7 @@ if($stm->execute()){
 
     #Se query tem o valor de um cod_locacao, não posso alocar nessas datas:
     if($codLocacao != ''){
-        header("location:tentarNovamente.php");
+        header("location:Apuama/app/resources/views/carro/tentarNovamente.php");
         phpAlert("Carro já está alugado no período. Troque as datas ou troque o carro.");
     }
 
@@ -48,7 +48,7 @@ if($stm->execute()){
 
             #Se query tem o valor de um cod_locacao, não posso alocar nessas datas:
             if($codLocacao != ''){
-                header("location:tentarNovamente.php");
+                header("location:Apuama/app/resources/views/carro/tentarNovamente.php");
                 phpAlert("Carro já está alugado no período. Troque as datas ou troque o carro.");
             }
 
@@ -89,14 +89,14 @@ if($stm->execute()){
                     $stm = $db->prepare($query);
                     if($stm->execute()){
                         phpAlert("Reserva efetuada.");                        
-                        header("location:../indexCliente.php");
+                        header("location:Apuama/indexCliente.php");
                         }                        
                     else{
-                        header("location:salvaAluguel.php?error=salvaAluguel.php");
+                        header("location:Apuama/app/resources/views/carro/salvaAluguel.php?error=Apuama/app/resources/views/carro/salvaAluguel.php");
                     }
                 }
                 else{
-                    header("location:salvaAluguel.php?error=salvaAluguel.php");
+                    header("location:Apuama/app/resources/views/carro/salvaAluguel.php?error=Apuama/app/resources/views/carro/salvaAluguel.php");
                 }
             }
         }

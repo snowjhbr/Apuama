@@ -7,8 +7,8 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="Apuama/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="Apuama/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 
@@ -20,7 +20,7 @@
                     <div id="wrapper1">
                         <div id="espaço_container" class="container">
                             <div id="logo_site">
-                                <img src="../images/carros_logo.png" alt="some text" width=940 height=200>
+                                <img src="Apuama/app/resources/images/carros_logo.png" alt="some text" width=940 height=200>
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                     <div id="menu">
                         <div id="divtitulocadastra"></div>
                         <div id="wrapperlogin">
-                            <form enctype="multipart/form-data" method="POST" action="../categorias/interface_economicos.php">
+                            <form enctype="multipart/form-data" method="POST" action="Apuama/app/resources/views/categorias/interface_economicos.php">
                                 <br>
                                 <h2 id="textoproblema"><br>O veículo já se encontra alugado neste período. Por favor, troque o veículo ou a data.</h2>
                                 <br>
@@ -36,7 +36,7 @@
                                     <button type="submit" id="botaoCadastro" class="button">
                                         Tentar Novamente
                                     </button>
-                                    <button id="botaoCancelar" class="button" formaction="../indexCliente.php">
+                                    <button id="botaoCancelar" class="button" formaction="Apuama/indexCliente.php">
                                         Cancelar
                                     </button>
                                 </div>

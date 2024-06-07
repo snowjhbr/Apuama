@@ -19,9 +19,9 @@ else{
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-	<link href="../css/default.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="../icon.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="Apuama/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="Apuama/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="Apuama/app/resources/css/icon.css" rel="stylesheet" type="text/css" media="all" />
 
 </head>
 
@@ -33,7 +33,7 @@ else{
 					<div id="wrapper1">
 						<div id="espaço_container" class="container">
 							<div id="logo_site">
-								<img src="../images/carros_logo.png" alt="some text" width=940 height=200>
+								<img src="Apuama/app/resources/images/carros_logo.png" alt="some text" width=940 height=200>
 							</div>
 						</div>
 					</div>
@@ -42,33 +42,33 @@ else{
 						<ul>
 							<?php
 								if($tipo == 'F'){
-									echo "<li><a href='../indexFuncionario.php' accesskey='1' title='Principal1'>Principal</a></li>";
+									echo "<li><a href='Apuama/indexFuncionario.php' accesskey='1' title='Principal1'>Principal</a></li>";
 								}
 								else if ($tipo == 'C'){
-									echo "<li><a href='../indexCliente.php' accesskey='1' title='Principal2'>Principal</a></li>";
+									echo "<li><a href='Apuama/indexCliente.php' accesskey='1' title='Principal2'>Principal</a></li>";
 								}
 								else{
-									echo "<li><a href='../index.php' accesskey='1' title='Principal3'>Principal</a></li>";
+									echo "<li><a href='Apuama/index.php' accesskey='1' title='Principal3'>Principal</a></li>";
 								}
 								
 							?>
 							<?php 
 								if (isset($_SESSION['cpf'])) {
-									print "<li><a href='../login/logout.php' accesskey='2' title=''>Logout</a></li>";
+									print "<li><a href='Apuama/app/resources/views/login/logout.php' accesskey='2' title=''>Logout</a></li>";
 								}
 								else {
-									print "<li><a href='../login/login.php' accesskey='2' title=''>Login</a></li>";
+									print "<li><a href='Apuama/app/resources/views/login/login.php' accesskey='2' title=''>Login</a></li>";
 								}
 							?>
-							<li><a href="economicos.php" accesskey="3" title="">Econômicos</a></li>
-							<li><a href="utilitarios.php" accesskey="4" title="">Utilitários</a></li>
+							<li><a href="Apuama/app/resources/views/categorias/economicos.php" accesskey="3" title="">Econômicos</a></li>
+							<li><a href="Apuama/app/resources/views/categorias/utilitarios.php" accesskey="4" title="">Utilitários</a></li>
 							<li class="current_page_item"><a href="suv.php" accesskey="5" title="">SUV</a></li>
-							<li><a href="luxo.php" accesskey="6" title="">Luxo</a></li>
-							<li><a href="../contato.php" accesskey="7" title="">Contato</a></li>
+							<li><a href="Apuama/app/resources/views/categorias/luxo.php" accesskey="6" title="">Luxo</a></li>
+							<li><a href="Apuama/app/resources/views/contato.php" accesskey="7" title="">Contato</a></li>
 						</ul>
 					</div>
 					<?php
-		include_once "../bd.php";
+		include_once "Apuama/app/config/conexao.php";
 
 		#SQL para listagem
 		$query = "SELECT * FROM automovel WHERE tipo = 'SUV'";
@@ -111,7 +111,7 @@ else{
 						<div class='column10'>
 							<div class='boxcar'>
 								<span class='icon icon-shopping-cart'></span>
-								<form enctype='multipart/form-data' method='POST' action='../carro/alugar_carro.php' >							
+								<form enctype='multipart/form-data' method='POST' action='Apuama/app/resources/views/carro/alugar_carro.php' >							
 								<h33><strong>Modelo  </strong>$marcaAutomovel</h33>							
 								<h33><strong>Placa:  </strong> <input type='text' id='camposemborda' readonly = 'true' name='placaAutomovel' value='$placaAutomovel' />  </h33>							
 								<h33><strong>Cor:  </strong>$corAutomovel</h33>							
@@ -137,7 +137,7 @@ else{
 							<div class='column10'>
 								<div class='boxcar'>
 									<span class='icon icon-shopping-cart'></span>
-									<form enctype='multipart/form-data' method='POST' action='../carro/editar_carros.php' >							
+									<form enctype='multipart/form-data' method='POST' action='Apuama/app/resources/views/carro/editar_carros.php' >							
 									<h33><strong>Modelo  </strong>$marcaAutomovel</h33>							
 									<h33><strong>Placa:  </strong><input type='text' readonly = 'true' id='camposemborda' name='placaAutomovel' value='$placaAutomovel' /> </h33>							
 									<h33><strong>Cor:  </strong>$corAutomovel</h33>							
