@@ -4,7 +4,7 @@
 
 include_once __DIR__ . "/../../../config/conexao.php";
 
-#Recebe parâmetros para inserção no banco:
+# Recebe parâmetros para inserção no banco:
 $flag = 0;
 $nomeFuncionario = $_POST['nomeFuncionario'];
 $dataFuncionario = $_POST['dataFuncionario'];
@@ -15,13 +15,19 @@ $bairroFuncionario = $_POST['bairroFuncionario'];
 $cidadeFuncionario = $_POST['cidadeFuncionario'];
 $funcaoFuncionario = $_POST['funcaoFuncionario'];
 $senhaFuncionario = $_POST['senhaFuncionario'];
-$statusFuncionario = 1;
 
+# Removendo caracteres não numéricos do CPF:
+$cpfFuncionario = preg_replace('/\D/', '', $cpfFuncionario);
+
+# Verifica se o CPF tem 11 caracteres:
+if (strlen($cpfFuncionario) != 11) {
+    die("Erro: O CPF deve conter 11 caracteres.");
+}
 
 # Query de inserção:
 $query = "INSERT INTO usuario
-(data_nascimento, nome, cpf, rua, bairro, cidade, cep, status, senha, tipo) 
-VALUES ('$dataFuncionario', '$nomeFuncionario', '$cpfFuncionario', '$ruaFuncionario', '$bairroFuncionario', '$cidadeFuncionario', '$cepFuncionario', '$statusFuncionario', '$senhaFuncionario', 'F')";
+(data_nascimento, nome, cpf, rua, bairro, cidade, cep, senha, tipo) 
+VALUES ('$dataFuncionario', '$nomeFuncionario', '$cpfFuncionario', '$ruaFuncionario', '$bairroFuncionario', '$cidadeFuncionario', '$cepFuncionario', '$senhaFuncionario', 'F')";
 # print "<p>$query</p>";
 $stm = $db->prepare($query);
 
@@ -35,7 +41,7 @@ if ($stm->execute()) {
             $codUsuario = $row['cod_usuario'];
         }
         # Insercao na tabela cliente:
-        $query = "INSERT INTO funcionario(funcao, cod_func) VALUES ('$funcaoFuncionario', '$codUsuario')";
+        $query = "INSERT INTO funcionario(função, cod_funcionario) VALUES ('$funcaoFuncionario', '$codUsuario')";
         $stm = $db->prepare($query);
         if ($stm->execute()) {
             header("location:/index.php");
@@ -47,8 +53,6 @@ if ($stm->execute()) {
     else {
         header("location:/app/resources/views/funcionarios/salvaFuncionario.php?error=/app/resources/views/funcionarios/salvaFuncionario.php");
     }
-
-
 } else {
     header("/app/resources/views/funcionarios/salvaFuncionario.php?error=/app/resources/views/funcionarios/salvaFuncionario.php");
 }

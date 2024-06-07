@@ -66,8 +66,10 @@ if (isset($_SESSION['cpf'])) {
 					include_once __DIR__ . "/../../../config/conexao.php";
 
 					#SQL para listagem
-					$query = "SELECT * FROM automovel WHERE manutencao = '1' ";
+					$query = "SELECT * FROM automovel WHERE \"manutenção\" = '1'";
 					$stm = $db->prepare($query);
+					$stm->execute();
+
 
 					#Executa o SQL
 					if ($stm->execute()) {

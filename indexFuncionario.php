@@ -144,7 +144,7 @@ else{
 					<div class="column6">
 						<div class="box">
 							<span class="icon icon-file-alt"></span>
-							<form method="post" action="app/resources/views/funcionario/cria_conta.php">
+							<form method="post" action="app/resources/views/funcionarios/cria_conta.php">
 								<h3>Cadastrar um funcionario</h3>
 								<p>Cadastrar um novo funcionario no sistema.</p>
 								<button type="submit" id="botaofun2" class="button">
