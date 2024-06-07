@@ -74,7 +74,7 @@ if (isset($_SESSION['cpf'])) {
 						</ul>
 					</div>
 					<?php
-					include_once "Apuama/app/config/conexao.php";
+					include_once __DIR__ ."/../../../config/conexao.php";
 
 					#SQL para listagem
 					$query = "SELECT * FROM automovel WHERE tipo = 'Economico'";
