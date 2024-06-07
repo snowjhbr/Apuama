@@ -1,6 +1,6 @@
 <?php
-include_once "../bd.php";
-include_once "../models/AluguelModel.php";
+include_once __DIR__ . "/../../../config/conexao.php";
+include_once "app/models/AluguelModel.php";
 
 class AluguelController {
     private $model;
@@ -17,7 +17,7 @@ class AluguelController {
         $dataDevolucao = $_POST['dataDevolucao'];
 
         if ($this->model->isCarroAlugado($placaAutomovel, $dataLocacao, $dataDevolucao)) {
-            $this->redirectComMensagem("../views/tentarNovamente.php", "Carro já está alugado no período. Troque as datas ou troque o carro.");
+            $this->redirectComMensagem("app/resources/views/tentarNovamente.php", "Carro já está alugado no período. Troque as datas ou troque o carro.");
         } else {
             $valorDiaria = $this->model->getValorDiaria($placaAutomovel);
             $dias = (strtotime($dataDevolucao) - strtotime($dataLocacao)) / (60 * 60 * 24);
@@ -26,9 +26,9 @@ class AluguelController {
             $codCliente = $this->model->getClienteId($cpfCliente);
             
             if ($this->model->inserirReserva($placaAutomovel, $codCliente, $lastId)) {
-                $this->redirectComMensagem("../views/indexCliente.php", "Reserva efetuada.");
+                $this->redirectComMensagem("/indexCliente.php", "Reserva efetuada.");
             } else {
-                $this->redirectComMensagem("salvaAluguel.php", "Erro ao salvar a reserva.");
+                $this->redirectComMensagem("app/resources/views/carro/salvaAluguel.php", "Erro ao salvar a reserva.");
             }
         }
     }

@@ -1,6 +1,6 @@
 <?php
-require_once '../config/conexao.php';
-require_once '../models/Cliente.php';
+include_once __DIR__ . "/../../../config/conexao.php";
+require_once 'app/models/Cliente.php';
 
 class ClienteController {
     private $db;
@@ -13,7 +13,7 @@ class ClienteController {
     public function index() {
         $stmt = $this->cliente->readAll();
         $clientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        include_once '../views/clientes/listar.php';
+        include_once 'app/resources/views/clientes/listar.php';
     }
 
     public function create() {
@@ -33,7 +33,7 @@ class ClienteController {
                 echo "Erro ao adicionar cliente.";
             }
         } else {
-            include_once '../views/clientes/criar.php';
+            include_once 'app/resources/views/clientes/criar.php';
         }
     }
 }

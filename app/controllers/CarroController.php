@@ -1,6 +1,6 @@
 <?php
-require_once '../config/conexao.php';
-require_once '../models/Carro.php';
+include_once __DIR__ . "/../../../config/conexao.php";
+require_once 'app/models/Carro.php';
 
 class CarroController {
     private $db;
@@ -13,7 +13,7 @@ class CarroController {
     public function index() {
         $stmt = $this->carro->readAll();
         $carros = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        include_once '../views/carro/todos_carros.php';
+        include_once 'app/resources/views/carro/todos_mecanica.php';
     }
 
     public function create() {
@@ -41,7 +41,7 @@ class CarroController {
                 echo "Erro ao adicionar carro.";
             }
         } else {
-            include_once '../views/carro/inserir_carros.php';
+            include_once 'app/resources/views/carro/inserir_carros.php';
         }
     }
 }

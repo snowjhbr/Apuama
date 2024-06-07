@@ -1,6 +1,6 @@
 <?php
-require_once '../config/conexao.php';
-require_once '../models/Categoria.php';
+include_once __DIR__ . "/../../../config/conexao.php";
+require_once 'app/models/Categoria.php';
 
 class CategoriaController {
     private $db;
@@ -13,7 +13,7 @@ class CategoriaController {
     public function index() {
         $stmt = $this->categoria->readAll();
         $categorias = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        include_once '../views/categorias/listar.php';
+        include_once 'app/resources/views/categorias/listar.php';
     }
 
     public function create() {
@@ -25,7 +25,7 @@ class CategoriaController {
                 echo "Erro ao adicionar categoria.";
             }
         } else {
-            include_once '../views/categorias/criar.php';
+            include_once 'app/resources/views/categorias/criar.php';
         }
     }
 }
