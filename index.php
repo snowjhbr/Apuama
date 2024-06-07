@@ -31,7 +31,7 @@ try {
     // Verifica se o controlador está definido e inclui o arquivo de controladores
     $controllerFunction = $router[$request][$uri];
     if (!function_exists($controllerFunction)) {
-        require_once __DIR__."Apuama/app/controllers/{$controllerFunction}.php";
+        require_once __DIR__."/app/controllers/{$controllerFunction}.php";
     }
 
     // Executa o controlador associado à rota
@@ -56,16 +56,16 @@ try {
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link href="Apuama/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="Apuama/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="Apuama/app/resources/css/icon.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="app/resources/css/icon.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
     <div id="wrapper1">
         <div id="header-wrapper">
             <div id="header" class="container">
                 <div id="logo">
-                    <img src="Apuama/app/resources/images/carros_logo.png" alt="Logo" width="940" height="200">
+                    <img src="/app/resources/images/carros_logo.png" alt="Logo" width="940" height="200">
                     <h1><a href="#">Sistema de Gerenciamento de Aluguel de Carros</a></h1>
                 </div>
                 <div id="menu">
@@ -73,25 +73,25 @@ try {
                         <?php
                         // Menu dinâmico baseado no tipo de usuário
                         if ($tipo === 'F') {
-                            echo "<li class='current_page_item'><a href='Apuama/indexFuncionario.php' accesskey='1' title=''>Principal</a></li>";
+                            echo "<li class='current_page_item'><a href='indexFuncionario.php' accesskey='1' title=''>Principal</a></li>";
                         } elseif ($tipo === 'C') {
-                            echo "<li class='current_page_item'><a href='Apuama/indexCliente.php' accesskey='1' title=''>Principal</a></li>";
+                            echo "<li class='current_page_item'><a href='indexCliente.php' accesskey='1' title=''>Principal</a></li>";
                         } else {
-                            echo "<li class='current_page_item'><a href='Apuama/index.php' accesskey='1' title=''>Principal</a></li>";
+                            echo "<li class='current_page_item'><a href='index.php' accesskey='1' title=''>Principal</a></li>";
                         }
 
                         // Link de login/logout dinâmico
                         if (isset($_SESSION['cpf'])) {
-                            echo "<li><a href='Apuama/app/resources/views/login/logout.php' accesskey='2' title=''>Logout</a></li>";
+                            echo "<li><a href='app/resources/views/login/logout.php' accesskey='2' title=''>Logout</a></li>";
                         } else {
-                            echo "<li><a href='Apuama/app/resources/views/login/login.php' accesskey='2' title=''>Login</a></li>";
+                            echo "<li><a href='app/resources/views/login/login.php' accesskey='2' title=''>Login</a></li>";
                         }
                         ?>
-                        <li><a href="Apuama/app/resources/views/categorias/economicos.php" accesskey="3" title="">Econômicos</a></li>
-                        <li><a href="Apuama/app/resources/views/categorias/utilitarios.php" accesskey="4" title="">Utilitários</a></li>
-                        <li><a href="Apuama/app/resources/views/categorias/suv.php" accesskey="5" title="">SUV</a></li>
-                        <li><a href="Apuama/app/resources/views/categorias/luxo.php" accesskey="6" title="">Luxo</a></li>
-                        <li><a href="Apuama/app/resources/views/contato.php" accesskey="7" title="">Contato</a></li>
+                        <li><a href="app/resources/views/categorias/economicos.php" accesskey="3" title="">Econômicos</a></li>
+                        <li><a href="app/resources/views/categorias/utilitarios.php" accesskey="4" title="">Utilitários</a></li>
+                        <li><a href="app/resources/views/categorias/suv.php" accesskey="5" title="">SUV</a></li>
+                        <li><a href="app/resources/views/categorias/luxo.php" accesskey="6" title="">Luxo</a></li>
+                        <li><a href="app/resources/views/contato.php" accesskey="7" title="">Contato</a></li>
                     </ul>
                 </div>
             </div>
@@ -143,7 +143,7 @@ try {
             <div id="espaço_container" class="container">
                 <div class="title">
                     <h2>Temos todos os tipos de automóveis!</h2>
-                    <img src="Apuama/app/resources/images/veiculos.png" alt="Veículos" width="800" height="280">
+                    <img src="app/resources/images/veiculos.png" alt="Veículos" width="800" height="280">
                 </div>
             </div>
         </div>
