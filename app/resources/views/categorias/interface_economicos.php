@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 
 <?php
 // Inicia a sessão.
@@ -12,6 +12,7 @@ if (isset($_SESSION['cpf'])) {
 
 ?>
 
+<!DOCTYPE html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title></title>
