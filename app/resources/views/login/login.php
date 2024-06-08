@@ -9,6 +9,7 @@
 	<link href="/app/resources/css/default.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="/app/resources/css/icon.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
 	<!--- Esta funcao formata mascara dos inputs-->
     <script type="text/javascript">

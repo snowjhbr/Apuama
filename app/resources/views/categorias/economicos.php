@@ -22,6 +22,7 @@ if (isset($_SESSION['cpf'])) {
 	<link href="/app/resources/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="/app/resources/css/icon.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="/app/resources/css/icon.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
 
 	<?php
 	function phpAlert($msg)
@@ -77,7 +78,7 @@ if (isset($_SESSION['cpf'])) {
 					include_once __DIR__ ."/../../../config/conexao.php";
 
 					#SQL para listagem
-					$query = "SELECT * FROM automovel WHERE tipo = 'Economico'";
+					$query = "SELECT * FROM automovel WHERE tipo = 'Econômico'";
 					$stm = $db->prepare($query);
 
 					#Executa o SQL

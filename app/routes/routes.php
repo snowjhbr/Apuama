@@ -1,7 +1,7 @@
 <?php
     $router = [
       'GET' => [
-          '/' => 'homeController',
+          '/' => 'Controller',
           '/login' => 'loginController',
           '/logout' => 'logoutController',
           '/cliente' => 'clienteController',
